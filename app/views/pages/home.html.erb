@@ -1,12 +1,14 @@
 <% if current_user %>
-    <p>Welcome <%= current_user.email %> to BChainChat</p>
+    <h1>Welcome " <%= current_user.email %> " to BChainChat</h1>
     <p>You are signed in as [<%= current_user.role %>]</p>
     <% if current_user.admin? %>
-        Currently there are <%= User.count %> connected to BChainChat!
+        Currently there are <%= User.count %> registered users on BChainChat!
     <% end %>
-
     <br />
-
+    <br />
+    <%= link_to 'post', posts_path %>
+    <br />
+    <br />
     <%= link_to "Sign out", destroy_user_session_path,'data-turbo-method': :delete %>
     <br/>
 
