@@ -1,0 +1,22 @@
+<div class="container">
+    <% if current_user %>
+        <h3><%= current_user.email %> [<%= current_user.role %>]</h3>
+        <br />
+
+        <% if current_user.admin? %>
+            Currently there are <%= User.count %> registered users on BChainChat!
+            <br />
+            <br />
+            <%= link_to 'Review Event Submissions' %>
+        <% end %>
+        <br />
+        <br />
+        <%= link_to 'Update Profile', edit_user_registration_path %>
+        <br />
+        <br />
+        <%= link_to 'posts', posts_path %>
+        <br />
+        <br />
+
+    <% end %>
+</div>

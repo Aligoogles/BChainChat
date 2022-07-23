@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
-  def home
-    # @application = Doorkeeper::Application.find_by(name: "react")
+  
+  def profile
+  end
+  
+  def news
+  end
 
-    # @application = {
-    #   name: @application.name,
-    #   client_id: @application.uid,
-    #   client_secret: @application.secret
-    # }
-   end
+  def events
+  end
+
 end

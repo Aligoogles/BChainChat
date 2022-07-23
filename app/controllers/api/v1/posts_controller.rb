@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
     # GET /posts or /posts.json
     def index
       @posts = Post.all
-      render json: @posts
+      #render json: @posts
 
         #   respond_to do |format| 
         #     format.html { redirect_to root_url }

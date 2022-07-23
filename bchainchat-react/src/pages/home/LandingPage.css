@@ -1,0 +1,109 @@
+.main-page-title{
+    font-size: 40px;
+}
+
+.about-us {
+    margin: 3% 6%;
+    font-style: italic;
+    font-size: 25px;
+    color: #39023A; 
+}
+.login-paragraph {
+    margin: 3% 23%;
+    font-size: 25px;
+    color: #000000;
+}
+
+.login-box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    color: #0000005f;
+    width: 48%;
+    height: 40%;
+    align-self: center;
+}
+
+.MetaMask-img {
+    margin-top: 6%;
+    margin-bottom: 6%;
+    width: 30%;
+    height: 40%;
+    align-self: center;
+}
+
+button {
+    padding: 15px 70px;
+    font-size: 18px;
+    margin-bottom: 8%;
+    transition: all .5s;
+}
+button:hover {
+    background-color: #ffffff;
+    color: #39023A;
+    transform: scale(1.1);
+}
+
+/* Mobile/Tablet view */
+
+@media (max-width: 767px) {
+    button {
+        padding: 15px 40px;
+    } 
+
+    .MetaMask-img {
+        width: 40%;
+        height: 50%;
+    }
+
+    .login-paragraph {
+    margin: 10% 6%;
+    font-size: 30px;
+    }
+}
+
+@media (max-width: 468px) {
+    button {
+        padding: 15px 30px;
+        font-size: 15px;
+    } 
+    .main-page-title {
+        font-size: 40px;
+    }
+
+    .login-paragraph {
+    font-size: 20px;
+    }
+
+    .login-box {
+        width: 70%;
+        height: 70%;
+    }
+
+}
+
+@media (max-width: 350px) {
+    button {
+        padding: 12px 28px;
+        font-size: 15px;
+    } 
+    .main-page-title {
+        font-size: 35px;
+    }
+
+    .login-paragraph {
+    font-size: 18px;
+    }
+
+    .login-box {
+        width: 90%;
+        height: 90%;
+    }
+
+}
+
+
+
+
+
