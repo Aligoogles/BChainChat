@@ -1,6 +1,6 @@
 require "active_support/core_ext/integer/time"
 
-require 'ipinfo-rails'
+#require 'ipinfo-rails'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -70,7 +70,10 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
+
   #Ngrok- used to test API for automatic location on a live server
-  config.hosts << "d454-2001-bb6-9f01-6018-21b6-f5e3-c386-90dc.eu.ngrok.io"
-  config.middleware.use(IPinfoMiddleware, {token: Rails.application.credentials.dig(:ipinfo_token)})
+  # config.hosts << "d454-2001-bb6-9f01-6018-21b6-f5e3-c386-90dc.eu.ngrok.io"
+  # config.middleware.use(IPinfoMiddleware, {token: Rails.application.credentials.dig(:ipinfo_token)})
+
+
 end

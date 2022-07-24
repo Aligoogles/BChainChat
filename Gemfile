@@ -89,3 +89,5 @@ gem 'cssbundling-rails'
 gem "font-awesome-sass", "~> 6.1.1"
 
 gem 'ipinfo-rails'
+
+gem "carrierwave", "~> 2.2"

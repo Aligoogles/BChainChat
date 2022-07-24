@@ -1,19 +1,22 @@
+<div class="container">
+  <h1>Posts</h1>
 
-<h1>Posts</h1>
+  <div id="posts">
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <p>
+        <% if current_user.email == post.user %>
+          <div>
+            <%= link_to "Edit Post", edit_post_path(post) %> 
+            <br />
+            <%= button_to "Delete", post, method: :delete %>
+          </div>
+        <% end %>
+      </p>
+    <% end %>
+    <br />
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <% if current_user.email == post.user %>
-        <div>
-          <%= link_to "Edit Post", edit_post_path(post) %> 
-          <%= button_to "Delete", post, method: :delete %>
-        </div>
-      <% end %>
-    </p>
-  <% end %>
-
-
-  <%= link_to "New post", new_post_path %>
+    <%= link_to "New post", new_post_path %>
+  </div>
+  <br />
 </div>

@@ -1,23 +1,31 @@
-<div id="<%= dom_id post %>">
+<div class="container">
+  <div id="<%= dom_id post %>">
 
-  <div class="user-id">
-    <p>
-      <strong>User:</strong>
-      <%= post.user %>
-    </p>
-  </div>
+    <div class="user-id">
+      <p>
+        <strong>User:</strong>
+        <%= post.user %>
+      </p>
+    </div>
 
-  <div class="post-date">
-    <p>
-      <strong>Post date:</strong>
-      <%= post.post_date %>
-    </p>
-  </div>
+    <div class="post-date">
+      <p>
+        <strong>Post date:</strong>
+        <%= post.post_date %>
+      </p>
+    </div>
 
-  <div class="comment">
-    <p>
-      <strong>Comment:</strong>
-      <%= post.comment %>
-    </p>
+    <div class="comment">
+      <p>
+        <strong>Comment:</strong>
+        <%= post.comment %>
+      </p>
+    </div>
+
+
+    <div class="w-25 p-3">
+      <img src= "<%= post.image %>" >
+    </div>
+
   </div>
 </div>
