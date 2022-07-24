@@ -17,11 +17,11 @@
       <%= f.label :password_confirmation, "Confirm new password", style:"display: none;"  %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm the password" %>
     </div>
-
+    <br />
     <div class="actions">
       <%= f.submit "Change my password" %>
     </div>
   <% end %>
-
+  <br />
   <%= render "devise/shared/links" %>
 </div>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :email, format: URI::MailTo::EMAIL_REGEXP
   enum role: [:user, :admin]
-  
+
   def self.authenticate(email, password)
     user = User.find_for_authentication(email: email)
     user&.valid_password?(password) ? user : nil
@@ -15,4 +15,7 @@ class User < ApplicationRecord
   def set_default_role
     self.role ||= :user  
   end  
+
+  has_many :posts
+  
 end

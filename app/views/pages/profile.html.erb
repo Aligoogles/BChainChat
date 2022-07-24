@@ -4,11 +4,17 @@
         <br />
 
         <% if current_user.admin? %>
-            Currently there are <%= User.count %> registered users on BChainChat!
+            <h3>Currently there are <%= User.count %> registered users on BChainChat!</h3>
             <br />
             <br />
             <%= link_to 'Review Event Submissions' %>
         <% end %>
+        <br />
+        <strong><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></strong>
+        <br />
+        <h5><i><%= current_user.bio %></i></h5>
+        <br />
+        <h5><%= current_user.country %></h5>
         <br />
         <br />
         <%= link_to 'Update Profile', edit_user_registration_path %>
