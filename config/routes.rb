@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   root 'pages#profile'
 
   use_doorkeeper
-  resources :posts
+  resources :posts do
+    member do
+      patch :vote
+    end
+  end
+  
   devise_for :users
 
   devise_scope :user do  

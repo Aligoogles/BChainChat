@@ -27,5 +27,12 @@
       <img src= "<%= post.image %>" >
     </div>
 
+    <br />
+    
+  <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
+  <br>
+  Likes: <%= post.cached_votes_total %>
+  <hr />
+
   </div>
 </div>

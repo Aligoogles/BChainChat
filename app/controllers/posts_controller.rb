@@ -1,10 +1,29 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy vote]
   before_action :authenticate_user!
 
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+  end
+
+  def vote
+    case params[:type]
+    when 'upvote'
+      @post.upvote!(current_user)
+    when 'downvote'
+     @post.downvote!(current_user)
+    else
+      return redirect_to request.url, alert: "error"
+    end
+    respond_to do |format|
+      format.html do
+        redirect_to @post
+      end
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@post, partial: "posts/post", locals: {post: @post})
+      end
+    end
   end
 
   # GET /posts/1 or /posts/1.json

@@ -17,5 +17,8 @@ class User < ApplicationRecord
   end  
 
   has_many :posts
+
+  #user that likes a post
+  acts_as_voter
   
 end
