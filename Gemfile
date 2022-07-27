@@ -86,9 +86,13 @@ gem "simple_form"
 
 gem 'cssbundling-rails'
 
+gem 'jsbundling-rails'
+
 gem "font-awesome-sass", "~> 6.1.1"
 
 gem 'ipinfo-rails'
+
+gem 'bootstrap', '~> 5.1.3'
 
 gem "carrierwave", "~> 2.2"
 

@@ -30,7 +30,8 @@
   <div>
     <%= form.label :image, style: "display: none" %>
     <%= form.file_field :image %>
-    <img src= "<%= post.image %>" >
+    <% if post.image?%>
+      <img src= "<%= post.image %>" style="height: 200px; width: 230px; margin: 0;" >
   </div>
 
   <br />

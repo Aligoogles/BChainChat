@@ -1,20 +1,22 @@
 <div class="container">
   <div id="<%= dom_id post %>">
 
-    <div class="user-id">
-      <p>
-        <strong>User:</strong>
-        <%= post.user %>
-      </p>
-    </div>
+    <div class="row">
+      <div class="user-id col">
+        <p>
+          <strong>User:</strong>
+          <%= post.user %>
+        </p>
+      </div>
 
-    <div class="post-date">
-      <p>
-        <strong>Post date:</strong>
-        <%= post.post_date %>
-      </p>
-    </div>
-
+      <div class="post-date col">
+        <p>
+          <strong>Post date:</strong>
+          <%= post.post_date %>
+        </p>
+      </div>
+    </div>  
+ 
     <div class="comment">
       <p>
         <strong>Comment:</strong>
@@ -23,16 +25,17 @@
     </div>
 
 
-    <div class="w-25 p-3">
-      <img src= "<%= post.image %>" >
-    </div>
-
+    <% if post.image?%>
+      <div >
+        <img src= "<%= post.image  %>" style="height: 200px; width: 230px; margin: 0;" >
+      </div>
+    <% end %>
     <br />
     
-  <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
-  <br>
-  Likes: <%= post.cached_votes_total %>
-  <hr />
+    <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
+    <br>
+    Likes: <%= post.cached_votes_total %>
+    <hr />
 
   </div>
 </div>
