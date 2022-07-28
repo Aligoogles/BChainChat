@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+    #attached images to posts
     mount_uploader :image, ImageUploader
 
     #Like button
@@ -19,4 +20,7 @@ class Post < ApplicationRecord
             downvote_by user
         end
     end
+
+    #reply
+    has_many :replies, dependent: :destroy
 end

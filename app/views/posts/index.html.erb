@@ -4,19 +4,34 @@
   <div id="posts">
     <% @posts.each do |post| %>
       <%= render post %>
+
+      <strong><%= post.replies.count %> Replies</strong>
       <p>
-        <% if current_user.email == post.user %>
-          <div>
-            <%= link_to "Edit Post", edit_post_path(post) %> 
-            <br />
-            <%= button_to "Delete", post, method: :delete %>
+        <div class="row">
+          <div class="col">
+            <%= link_to "Show this post", post, method: :post, style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %>
           </div>
-        <% end %>
+
+          <% if current_user.email == post.user %>
+            <div class="col">
+              <%= link_to "Edit Post", edit_post_path(post), style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %> 
+            </div>
+            
+            <div class="col">
+              <%= button_to "Delete", post, method: :delete, style: "background-color: #39023A; color: #ffffff;" %>
+            </div>
+          <% end %>
+        </div>
+        <hr />
       </p>
     <% end %>
     <br />
 
-    <%= link_to "New post", new_post_path %>
+    <div class="row">
+      <div class="col">
+        <%= link_to "New post", new_post_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none;" %>
+      </div>
+    </div>
   </div>
   <br />
 </div>

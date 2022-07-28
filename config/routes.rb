@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       patch :vote
     end
+    resources :replies
   end
   
   devise_for :users

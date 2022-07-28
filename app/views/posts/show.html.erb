@@ -3,11 +3,32 @@
 
   <%= render @post %>
 
-  <div>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <br />
-    <%= link_to "Back to posts", posts_path %>
-    <br />
-    <%= button_to "Delete", @post, method: :delete %>
-  </div>
+  <% if current_user.email == @post.user %>
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <%= link_to "Edit this post", edit_post_path(@post), style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %> 
+          </div>
+
+          <div class="col">
+            <%= link_to "Back to posts", posts_path, style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;"  %>
+          </div>
+
+          <div class="col">
+            <%= button_to "Delete", @post, method: :delete, style: "background-color: #39023A; color: #ffffff;" %>
+          </div>
+        </div>
+    </div>
+  <% end %>
+
+  <section class="section comments">
+    <div class="container">
+      <br />
+      <h6 class="subtitle is-5"><strong><%= @post.replies.count %></strong> Replies</h6>
+      <%= render @post.replies %>
+      <div class="comment-form">
+        <%= render 'replies/form' %>
+      </div>
+    </div>
+  </section>
 </div>

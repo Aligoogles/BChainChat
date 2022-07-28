@@ -20,5 +20,7 @@ class User < ApplicationRecord
 
   #user that likes a post
   acts_as_voter
+
+  has_many :replies, dependent: :destroy
   
 end

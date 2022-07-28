@@ -26,12 +26,13 @@
     <%= form.text_area :comment %>
   </div>
 
-  <br>
+  <br />
   <div>
     <%= form.label :image, style: "display: none" %>
     <%= form.file_field :image %>
     <% if post.image?%>
       <img src= "<%= post.image %>" style="height: 200px; width: 230px; margin: 0;" >
+    <% end %>
   </div>
 
   <br />
@@ -39,3 +40,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+

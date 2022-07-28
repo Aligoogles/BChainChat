@@ -1,0 +1,21 @@
+
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= reply.user.email %>:</strong>
+        </p>
+      </div>
+    </div>
+    <br />
+    <%= reply.content %>
+    <br />
+    <br />
+    <% if current_user && current_user == reply.user %>
+      <%= button_to 'Delete', [reply.post, reply], method: :delete, class: "button is-danger", data: { confirm: 'Last chance to go back before fully deleted ?' } %>
+    <% end %>
+  </article>
+  <hr />
+
+</div>
