@@ -22,5 +22,17 @@ class User < ApplicationRecord
   acts_as_voter
 
   has_many :replies, dependent: :destroy
+
+  #profile image upload
+  mount_uploader :image, ImageUploader
+
+  validates_integrity_of  :image
+  validates_processing_of :image
+ 
+  private
+
+  def image_size_validation
+    errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
+  end
   
 end

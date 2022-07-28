@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_27_204115) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_28_180804) do
   create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer "resource_owner_id"
     t.integer "application_id", null: false
@@ -83,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_204115) do
     t.string "profession"
     t.text "interest"
     t.text "bio"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -93,3 +93,7 @@ gem 'bootstrap', '~> 5.1.3'
 gem "carrierwave", "~> 2.2"
 
 gem 'acts_as_votable'
+
+gem 'file_validators'
+
+gem 'mini_magick'
