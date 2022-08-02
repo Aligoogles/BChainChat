@@ -4,8 +4,8 @@
     <div class="row">
       <div class="user-id col">
         <p>
-          <strong>User:</strong>
-          <%= post.user %>
+          <strong>Posted by:</strong>
+          <%= link_to post.user.first_name, user_path(post.user) %>
         </p>
       </div>
 

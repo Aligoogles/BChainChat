@@ -12,7 +12,7 @@
             <%= link_to "Show this post", post, method: :post, style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %>
           </div>
 
-          <% if current_user.email == post.user %>
+          <% if current_user && current_user == post.user %>
             <div class="col">
               <%= link_to "Edit Post", edit_post_path(post), style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %> 
             </div>

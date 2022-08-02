@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_28_180804) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_230043) do
   create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer "resource_owner_id"
     t.integer "application_id", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_180804) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "user"
     t.date "post_date"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -53,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_180804) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "replies", force: :cascade do |t|
@@ -105,6 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_180804) do
   end
 
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "posts", "users"
   add_foreign_key "replies", "posts"
   add_foreign_key "replies", "users"
 end

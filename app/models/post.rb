@@ -1,4 +1,9 @@
 class Post < ApplicationRecord
+    validates :comment, presence: true, length: { minimum: 10, maximum: 1000}
+
+    #users
+    belongs_to :user
+
     #attached images to posts
     mount_uploader :image, ImageUploader
 

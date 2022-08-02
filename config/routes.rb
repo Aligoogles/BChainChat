@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  get 'pages/news'
+  get 'users/profile'
 
-  get 'pages/events'
+  #News (API)
+  get 'news', to: 'pages#news'
 
-  root 'pages#profile'
+  #Events
+  get 'events', to: 'pages#events'
+
+  #Landing Page
+  root 'pages#home'
 
   use_doorkeeper
+
+  #Posts/Reply/Likes
   resources :posts do
     member do
       patch :vote
@@ -13,7 +20,14 @@ Rails.application.routes.draw do
     resources :replies
   end
   
-  devise_for :users
+  #User profile
+  get '/u/:id', to:'users#profile', as: 'user'
+
+  #Devise - users access
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
@@ -22,10 +36,4 @@ Rails.application.routes.draw do
   #allows to draw additional routes from new routes folder
   draw :api
 
-
-  
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

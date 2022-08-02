@@ -20,21 +20,21 @@
         </div>
 
         <div class="row">
-            <div class="col-8 ">
-                <strong><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></strong>
-                <br />
-                <h5><%= current_user.email %> [<%= current_user.role %>]</h5>
-                <br />
-                <h5><i><%= current_user.bio %></i></h5>
-                <br />
-                <h5><%= current_user.country %></h5>
-            </div>
+        <div class="col-6 ">
+            <strong><h3><%= @user.first_name %> <%= @user.last_name %></h3></strong>
+            <br />
+            <h5><%= @user.email %> </h5>
+            <br />
+            <h5><i><%= @user.bio %></i></h5>
+            <br />
+            <h5><%= @user.country %></h5>
+        </div>
 
             <div class="col-4">
-                <%= link_to 'Attending Events', pages_events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 10%;" %>
+                <%= link_to 'Attending Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 10%;" %>
             </div>
             <div class="col">
-                <%= link_to 'Hosting Events', pages_events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: -5%;" %>
+                <%= link_to 'Hosting Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: -5%;" %>
             </div>
         </div>
         <br />

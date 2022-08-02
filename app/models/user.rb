@@ -16,6 +16,7 @@ class User < ApplicationRecord
     self.role ||= :user  
   end  
 
+  #Posts
   has_many :posts
 
   #user that likes a post

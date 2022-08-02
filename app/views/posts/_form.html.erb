@@ -12,11 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :user, style: "display: none" %>
-    <%= form.text_field :user, value:current_user.email, style: "display: none" %>
-  </div>
-
-  <div>
     <%= form.label :post_date, style: "display: none" %>
     <%= form.date_field :post_date, value:Date.today.to_s, style: "display: none" %>
   </div>
