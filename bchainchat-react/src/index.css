@@ -1,3 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #39023A;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -7,4 +28,37 @@ body {
 
 code {
   font-family: 'Roboto', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, a{
+  color: #39023A;
+  font-weight: 600;
+}
+
+p{
+  color: #000000;
+  font-weight: 400;
+}
+
+button {
+  background-color: #39023A;
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all .5s;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #39023A;
+  border: 3px solid #39023A;
+  transform: scale(1.1);
 }

@@ -1,20 +1,25 @@
 /* eslint-disable react/react-in-jsx-scope */
-
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './pages/home/LandingPage';
-import NavBar from './components/nav_bar/NavBar'
+import NavBar from './components/nav_bar/NavBar';
+import News from './pages/news/News';
 
 
 function App() {
   return (
     
     <div className="App">
-      <NavBar />
-      <br />
-      <LandingPage />
-      
-      
+      <Router>
+        <NavBar />
+
+        <LandingPage />
+        <br />
+        <br />
+        <News />
+
+      </Router> 
     </div>
   );
 }
