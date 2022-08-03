@@ -11,7 +11,7 @@
 
         <% if user_signed_in? %>
           <li class="nav-item active ">
-            <%= link_to 'User Profile', user_path(current_user), class:"nav-link" %>
+            <%= link_to 'User Profile', user_profiles_profile_path, class:"nav-link" %>
           </li>
           <li class="nav-item " >
             <%= link_to 'Timeline', posts_path, class:"nav-link" %>

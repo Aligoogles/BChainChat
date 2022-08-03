@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_01_230043) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_232348) do
+  create_table "dashboards", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_private", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.time "time"
+    t.string "location"
+    t.integer "limit"
+    t.integer "attendees"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "dashboard_id", null: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dashboard_id"], name: "index_messages_on_dashboard_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer "resource_owner_id"
     t.integer "application_id", null: false
@@ -37,6 +67,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_230043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "dashboard_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dashboard_id"], name: "index_participants_on_dashboard_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -105,7 +144,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_230043) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter"
   end
 
+  add_foreign_key "messages", "dashboards"
+  add_foreign_key "messages", "users"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "participants", "dashboards"
+  add_foreign_key "participants", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "replies", "posts"
   add_foreign_key "replies", "users"

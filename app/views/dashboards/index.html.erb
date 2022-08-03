@@ -1,0 +1,35 @@
+<div id="chatroom_container" class=" row ">
+    <div id="side_panel" class="col-md-4 col-sm-4">
+    <br />
+        <h5 class="container">User: <%= current_user.first_name %></h5>
+
+        <h5 class="container"> Your Contacts </h5>
+        <%= turbo_stream_from "users" %>
+        <div id="users">
+            <%= render @users %>
+        </div>
+
+        <br />
+        <br />
+        <h5 class="container"> Dashboards </h5>
+ 
+        <%= turbo_stream_from "dashboards" %>
+        <%= render 'layouts/new_dashboard_form' %>
+        <div id="dashboards">
+            <%= render @dashboards %>
+        </div> 
+    </div>
+
+    <div id="dashboard_container" class="col-md-8 col-sm-8 ">
+        <% if @single_dashboard %>
+            <div id="single_room">
+                <h4 class="text-center"> <%= @user&.email || @single_dashboard.name %> </h4>
+                <%= turbo_stream_from @single_dashboard %>
+                <div id="messages" data-controller="scroll">
+                    <%= render @messages %>
+                </div>
+                <%= render 'layouts/new_message_form' %>
+            </div>
+        <% end %>
+    </div>
+</div>

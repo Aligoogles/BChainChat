@@ -3,7 +3,7 @@
 
   <%= render @post %>
 
-  <% if current_user.email == @post.user %>
+  <% if current_user && current_user == @post.user %>
     <div class="container">
       <div class="row">
           <div class="col">

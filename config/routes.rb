@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/profile'
+
+  #Events Page
+  resources :events
+  
+  #User Profile page
+  get 'user_profiles/profile'
 
   #News (API)
   get 'news', to: 'pages#news'
@@ -20,8 +25,9 @@ Rails.application.routes.draw do
     resources :replies
   end
   
-  #User profile
-  get '/u/:id', to:'users#profile', as: 'user'
+  #User - messages
+  get '/u/:id', to:'users#show', as: 'user'
+  #get '/u/:id', to:'user_profiles#profile', as: 'user_profile'
 
   #Devise - users access
   devise_for :users, controllers: {
@@ -31,6 +37,11 @@ Rails.application.routes.draw do
 
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
+  end
+
+  #Messages
+  resources :dashboards do
+    resources :messages 
   end
 
   #allows to draw additional routes from new routes folder

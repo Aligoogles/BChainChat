@@ -4,8 +4,14 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong><%= reply.user.email %>:</strong>
+          <strong><%= reply.user.first_name %>:</strong>
         </p>
+        <p><% if (reply.updated_at - reply.created_at) > 1 %>
+          Edited <%= time_ago_in_words(reply.updated_at) %> ago 
+        </p>
+        <% else %>
+          <p> Posted <%= time_ago_in_words(reply.created_at) %> ago </p>
+        <% end %>
       </div>
     </div>
     <br />

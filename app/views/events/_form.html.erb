@@ -1,0 +1,28 @@
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+
+    <div>
+      <% if event.image?%>
+        <img src= "<%= event.image %>" style="height: 60vh; width: 120vh; margin: 2%;" >
+        <%= f.file_field :image %>
+      <% end %>
+    </div>
+    <br />
+    <%= f.input :title %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :location %>
+    <%= f.input :limit %>
+    <%= f.input :attendees %>
+    <%= f.input :description %>
+    <%= f.input :image %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right; margin-top: 10%;"  %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="container p-2 bg-light border" id="<%= dom_id event %>">
+
+  <% if event.image?%>
+    <div >
+      <img src= "<%= event.image  %>" style="height: 19vh; width: 24vh; margin: 2% 0%;" >
+    </div>
+  <% end %>
+  
+  <p>
+    <strong>Title:</strong>
+    <%= event.title %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= event.date %>
+  </p>
+
+  <p>
+    <strong>Time:</strong>
+    <%= event.time %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= event.location %>
+  </p>
+
+  <p>
+    <strong>Limit:</strong>
+    <%= event.limit %>
+  </p>
+
+  <p>
+    <strong>Attendees:</strong>
+    <%= event.attendees %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= event.description %>
+  </p>
+</div>

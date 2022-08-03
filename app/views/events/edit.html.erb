@@ -1,0 +1,12 @@
+<div class="container" style="margin-top: 3%;" >
+  <h3>Edit event</h3>
+
+  <%= render "form", event: @event %>
+
+  <br>
+
+  <div>
+      <%= link_to "Show this event", @event, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;"  %> |
+      <%= link_to "Back to events", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;"  %>
+  </div>
+</div>
