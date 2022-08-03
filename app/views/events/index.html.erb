@@ -1,21 +1,20 @@
-<strong style="color: green"><%= notice %></strong>
+<div class="container">
+  <div class="row p-2 bg-light border">
+    <div class="col">
+      <div style="margin-bottom: 8%;" >
+        <h3>Check out the latest events</h3>
+        <%= link_to "+ Create new event", new_event_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
+      </div>
+    </div>
 
-<div class="container p-2 bg-light border  row" >
-
-  <div style="margin-bottom: 8%;" >
-    <h3>Check out the latest events</h3>
-    <%= link_to "+ Create new event", new_event_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
-  </div>
-
-
-  <div class="col-" id="events">
-    <% @events.each do |event| %>
-      <%= render event %>
-
-      <p style="margin-bottom: 5%;">
-        <%= link_to "Show this event", event, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
-      </p>
-      <hr />
-    <% end %>
+    <div id="events" >
+      <% @events.each do |event| %>
+        <%= render event %>
+        <p style="margin-bottom: 5%;">
+          <%= link_to "Show this event", event, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
+        </p>
+        <hr />
+      <% end %>
+    </div>
   </div>
 </div>

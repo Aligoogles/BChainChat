@@ -5,7 +5,7 @@
       <img src= "<%= event.image  %>" style="height: 19vh; width: 24vh; margin: 2% 0%;" >
     </div>
   <% end %>
-  
+
   <p>
     <strong>Title:</strong>
     <%= event.title %>
@@ -27,6 +27,11 @@
   </p>
 
   <p>
+    <strong>Description:</strong>
+    <%= event.description %>
+  </p>
+
+  <p>
     <strong>Limit:</strong>
     <%= event.limit %>
   </p>
@@ -37,7 +42,7 @@
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%= event.description %>
+    <strong>Posted by:</strong>
+    <%= event.user.first_name %>
   </p>
 </div>

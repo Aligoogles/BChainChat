@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_02_232348) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_03_130407) do
   create_table "dashboards", force: :cascade do |t|
     t.string "name"
     t.boolean "is_private", default: false
@@ -19,16 +19,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_232348) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.string "image"
     t.string "title"
     t.date "date"
     t.time "time"
     t.string "location"
+    t.text "description"
     t.integer "limit"
     t.integer "attendees"
-    t.text "description"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -144,6 +146,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_232348) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter"
   end
 
+  add_foreign_key "events", "users"
   add_foreign_key "messages", "dashboards"
   add_foreign_key "messages", "users"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

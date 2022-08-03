@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
+  resources :events
 
   #Events Page
   resources :events
-  
+
   #User Profile page
   get 'user_profiles/profile'
 
   #News (API)
   get 'news', to: 'pages#news'
-
-  #Events
-  get 'events', to: 'pages#events'
 
   #Landing Page
   root 'pages#home'
