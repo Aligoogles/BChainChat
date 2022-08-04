@@ -10,4 +10,23 @@ class Event < ApplicationRecord
     mount_uploader :image, ImageUploader
 
     belongs_to :user
+
+    #Like button
+    acts_as_votable 
+
+    def uprsvp!(user)
+        if user.voted_up_on? self
+            unvote_by user
+        else
+            upvote_by user
+        end
+    end
+        
+    def downrsvp!(user)
+        if user.voted_down_on? self
+            unvote_by user
+        else
+            downvote_by user
+        end
+    end
 end

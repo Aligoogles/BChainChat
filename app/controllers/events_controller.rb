@@ -1,10 +1,30 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :set_event, only: %i[ show edit update destroy rsvp]
   before_action :authenticate_user!
 
   # GET /events or /events.json
   def index
     @events = Event.all
+  end
+
+  #RSVP Button
+  def rsvp
+    case params[:type]
+    when 'uprsvp'
+      @event.uprsvp!(current_user)
+    when 'downrsvp'
+     @event.downrsvp!(current_user)
+    else
+      return redirect_to request.url, alert: "error"
+    end
+    respond_to do |format|
+      format.html do
+        redirect_to @event
+      end
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@event, partial: "events/event", locals: {event: @event})
+      end
+    end
   end
 
   # GET /events/1 or /events/1.json

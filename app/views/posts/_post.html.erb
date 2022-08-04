@@ -1,41 +1,40 @@
-<div class="container">
-  <div id="<%= dom_id post %>">
 
-    <div class="row">
-      <div class="user-id col">
-        <p>
-          <strong>Posted by:</strong>
-          <%= link_to post.user.first_name, user_path(post.user) %>
-        </p>
-      </div>
+<div id="<%= dom_id post %>">
 
-      <div class="post-date col">
-        <p>
-          <strong>Post date:</strong>
-          <%= post.post_date %>
-        </p>
-      </div>
-    </div>  
- 
-    <div class="comment">
+  <div class="row">
+    <div class="user-id col">
       <p>
-        <strong>Comment:</strong>
-        <%= post.comment %>
+        <strong>Posted by:</strong>
+        <%= link_to post.user.first_name, user_profile_path(post.user) %>
       </p>
     </div>
 
+    <div class="post-date col">
+      <p>
+        <strong>Post date:</strong>
+        <%= post.post_date %>
+      </p>
+    </div>
+  </div>  
 
-    <% if post.image?%>
-      <div >
-        <img src= "<%= post.image  %>" style="height: 200px; width: 230px; margin: 0;" >
-      </div>
-    <% end %>
-    <br />
-    
-    <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
-    <br>
-    Likes: <%= post.cached_votes_total %>
-    <hr />
-
+  <div class="comment">
+    <p>
+      <strong>Comment:</strong>
+      <%= post.comment %>
+    </p>
   </div>
+
+
+  <% if post.image?%>
+    <div >
+      <img src= "<%= post.image  %>" style="height: 200px; width: 230px; margin: 0;" >
+    </div>
+  <% end %>
+  <br />
+  
+  <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
+  <br>
+  Likes: <%= post.cached_votes_total %>
+  <hr />
+
 </div>

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :events
-
   #Events Page
-  resources :events
+  resources :events do
+    member do
+      patch :rsvp
+    end
+  end
 
   #User Profile page
-  get 'user_profiles/profile'
+  get '/profile/:id', to:'user_profiles#profile', as: 'user_profile'
 
   #News (API)
   get 'news', to: 'pages#news'
@@ -25,7 +27,6 @@ Rails.application.routes.draw do
   
   #User - messages
   get '/u/:id', to:'users#show', as: 'user'
-  #get '/u/:id', to:'user_profiles#profile', as: 'user_profile'
 
   #Devise - users access
   devise_for :users, controllers: {

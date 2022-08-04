@@ -17,7 +17,7 @@ class DashboardsController < ApplicationController
     @single_dashboard = Dashboard.find(params[:id])
 
     @dashboard = Dashboard.new
-    @groups = Dashboard.public_dashboard
+    @dashboards = Dashboard.public_dashboard
 
     @message = Message.new
     @messages = @single_dashboard.messages.order(created_at: :asc)

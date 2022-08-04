@@ -22,6 +22,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :first_name, presence: true, length: { minimum: 2, maximum: 15}
+  validates :last_name, presence: true, length: { minimum: 2, maximum: 20}
+  validates :screen_name, presence: true, length: { minimum: 2, maximum: 10}
+  validates_uniqueness_of   :screen_name
+  validates :age, presence: true, numericality: { greater_than: 18 }
+  validates :phone_number, presence: true, numericality: { greater_than: 1 }
+  validates :country, presence: true, length: { minimum: 2, maximum: 20}
+  validates :profession, presence: true, length: { minimum: 2, maximum: 30}
+  validates :interest, presence: true, length: { minimum: 2, maximum: 50}
+
   validates :email, format: URI::MailTo::EMAIL_REGEXP
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record? 

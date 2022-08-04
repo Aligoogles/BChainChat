@@ -45,4 +45,9 @@
     <strong>Posted by:</strong>
     <%= event.user.first_name %>
   </p>
+
+  <%= button_to uprsvp_label(event, current_user), rsvp_event_path(event, type: :uprsvp), method: :patch, style: uprsvp_label_styles(event, current_user) %>
+  <br>
+  <strong>Attendees: <%= event.cached_votes_total %> </strong>
+  <hr />
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_130407) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_04_114049) do
   create_table "dashboards", force: :cascade do |t|
     t.string "name"
     t.boolean "is_private", default: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_130407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -126,6 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_130407) do
     t.text "interest"
     t.text "bio"
     t.string "image"
+    t.string "screen_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -27,19 +27,16 @@
   </head>
 
   <body>
-    <div class="container">
-
-      <%# <% if notice %>
-        <%#<p class="alert alert-success"><%= notice %><%#</p>
-      <%# end %>
-
-      <%# if alert %>
-        <%#<p class="alert alert-danger"><%= alert %><%#</p>
-      <%# end %>
-
+    <header>
       <%= render "layouts/navbar" %>
-      <%= yield %>
-      
-    </div>
+    </header>
+
+    <main>
+      <%= render "layouts/alerts" %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

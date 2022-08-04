@@ -99,4 +99,4 @@ gem 'file_validators'
 gem 'mini_magick'
 
 #Install this gem to reset database and then in rails console type "Database.Cleaner.clean_with(:truncation)"
-#gem 'database_cleaner'
+gem 'database_cleaner'
