@@ -1,116 +1,138 @@
-<div class="container " style="margin-top: 3%">
-  <h2>Edit Your <%= resource_name.to_s.humanize %></h2>
-
+<div class="container rounded bg-white mt-5 mb-5 main-container">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-      
+
     <div class="row">
-      <div class="col-4" >
-        <div class="field">
-          <%= f.label :image, style:"display: none;"  %><br />
-          <%= f.file_field :image %>
-        </div>
-
-        <div class="field">
-          <%= f.label :bio, style:"display: none;"  %><br />
-          <%= f.text_area :bio, placeholder:"About Yourself "%>
+      <div class="col-md-5 border-right">
+        <div class="row mt-2">
+          <div class="col-md-12">
+            <div class="field" >
+              <%= f.file_field :image %>
+            </div>
+          </div>
         </div>
 
         <br />
         <br />
-        <div class="field">
-          <%= f.label :current_password, style:"display: none;"  %> <strong><i style="color: red;">(Enter your current password to save changes)</i></strong><br />
-          <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Enter the current password" %>
+        <div class="row">
+          <div class="col-md-12">
+            <strong> <%= current_user.first_name %> <%= current_user.last_name %> </strong>
+            <br/>
+            <div class="col-md-12">
+              <div class="field", style="margin-top: 5%;">
+                <%= f.text_area :bio, placeholder:"About Yourself "%>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="field">
+              <p class="red-i-text spacing-top", style="  font-style: italic; color: rgb(206, 4, 4); font-weight: 600; margin-top: 10%;">(Enter your current password to save changes)</p>
+              <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Enter the current password" %>
+            </div>
+          </div>
         </div>
         <br />
         <div class="actions">
-          <%= f.submit "Save" %>
+          <%= f.submit "Save", style: "background-color: #39023A; color: #ffffff; padding: 5px 30px; text-decoration: none; border-radius: 8px; margin-top: 5%; float: left;" %>
         </div>
+
       </div>
 
-      <div class="col-8 update-right-details">
-        <div style="float: left; margin-right: 10%;">
-          <div class="field">
-            <%= f.label :first_name, style:"display: none;"  %><br />
-            <%= f.text_field :first_name, placeholder:"First Name"%>
+      <div class="col-md-6 border-right ">
+        <div class="p-3 py-2">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-right">Edit Your <%= resource_name.to_s.humanize %></h4>
           </div>
-        </div>
 
-        <div class="field">
-          <%= f.label :last_name, style:"display: none;"  %><br />
-          <%= f.text_field :last_name, placeholder:"Last Name"%>
-        </div>
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <%= f.text_field :first_name, placeholder:"First Name", class: "form-control" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :screen_name, style:"display: none;"  %><br />
-          <%= f.text_field :screen_name, placeholder:"Screen Name"%>
-        </div>
-
-        <div class="field">
-          <%= f.label :age, style:"display: none;"  %><br />
-          <%= f.text_field :age, placeholder:"Age"%>
-        </div>
-
-        <div style="float: left; margin-right: 10%;">
-          <div class="field">
-            <%= f.label :phone_number, style:"display: none;"  %><br />
-            <%= f.text_field :phone_number, placeholder:"Phone no:"%>
+            <div class="col-md-6">
+              <%= f.text_field :last_name, placeholder:"Last Name", class: "form-control" %>
+            </div>
           </div>
-        </div>
 
-        <div class="field">
-          <%= f.label :country, style:"display: none;"  %><br />
-          <%= f.text_field :country, placeholder:"Country" %>
-        </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <%= f.text_field :screen_name, placeholder:"Screen Name", class: "form-control" %>
+            </div>
+            
+            <div class="col-md-6">
+              <%= f.text_field :age, placeholder:"Age", class: "form-control" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :email, style:"display: none;"  %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email"%>
-        </div>
+            <div class="col-md-6", style=" margin-top: 3%;">
+              <%= f.text_field :phone_number, placeholder:"Phone no:", class: "form-control" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :profession, style:"display: none;"  %><br />
-          <%= f.text_field :profession, placeholder:"Profession"%>
-        </div>
+            <div class="col-md-6", style=" margin-top: 3%; ">
+              <%= f.text_field :country, placeholder:"Country", class: "form-control" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :interest, style:"display: none;"  %><br />
-          <%= f.text_area :interest, placeholder:"What's your inerest?"%>
-        </div>
+            <div class="col-md-12", style="margin-top: 3%;">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email", class: "form-control" %>
+            </div>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
+            <div class="col-md-12", style=" margin-top: 3%;">
+              <%= f.text_field :profession, placeholder:"Profession", class: "form-control" %>
+            </div>
 
-        <br />
-        <div style="float: left">
-          <div class="field">
-            <%= f.label :password, style:"display: none;" %> <i>(leave blank if you don't want to change it)</i><br />
-            <%= f.password_field :password, autocomplete: "new-password", placeholder:"Enter a new password" %>
-            <% if @minimum_password_length %>
-              <br />
-              <em>minimum <%= @minimum_password_length %> characters</em>
+            <div class="col-md-12", style="margin: 3% 0% 8% 0%;">
+              <%= f.text_area :interest, placeholder:"What's your inerest?", class: "form-control" %>
+            </div>
+
+            <br />
+            <hr />
+            <hr />
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for:  <%= resource.unconfirmed_email %>
+              </div>
             <% end %>
-          </div>
-        </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, style:"display: none;"  %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm the new password" %>
+
+            <br />
+            <h5 class="orange-i-text spacing-top", style="  font-style: italic; color: rgb(240, 147, 8);">To change password enter details below.</h5>
+            <div class="col-md-6">
+              <div class="field">
+                <%= f.password_field :password, autocomplete: "new-password", placeholder:"Enter a new password", class: "form-control" %>
+                <% if @minimum_password_length %><br />
+                  <em>minimum <%= @minimum_password_length %> characters</em>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="field">      
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder:"Confirm password", class: "form-control" %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <br />
-    <br />
   <% end %>
-  <br />
+
   <div class="row">
-    <div class="col">
-      <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-      <br />
-      <%#= link_to "Back", :back, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none;"%>
+    <div class="col-md-5 border-right ">
+    </div>
+    <div class="col-md-6 border-right ">
+      <div class="p-3 py-2">
+        <h5 class="orange-i-text spacing-top", style="  font-style: italic; color: rgb(240, 147, 8);">To delete account press the button below.</h5>
+        <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, style: "background-color: #39023A; color: #ffffff; padding: 8px 25px; text-decoration: none; border-radius: 8px;" %></p>
+        <br />
+      </div>
     </div>
   </div>
- 
 </div>
+
+
+
+
+
+
+

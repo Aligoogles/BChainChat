@@ -1,14 +1,21 @@
-<div class="container">
+<div class="container", style="margin-top: 3%;">
+
+  <%= render @event %>
+
   <div class="row"> 
     <div class="col">
-      <%= render @event %>
+      <% if current_user && current_user == @event.user %>
+        <div>
+          <%= link_to "Edit", edit_event_path(@event), style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %> 
 
-      <div>
-        <%= link_to "Edit", edit_event_path(@event), style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %> |
-        <%= link_to "Back", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %>
+          <%= button_to "Delete", @event, method: :delete, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
+        </div>
+      <% end %>
 
-        <%= button_to "Delete", @event, method: :delete, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
+      <div style="margin-top: 5%;">
+        <%= link_to "Back", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; " %>
       </div>
+
     </div>
   </div>
 </div>

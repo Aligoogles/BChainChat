@@ -2,3 +2,16 @@
     height: 80%;
     width: 80%;
 }
+.bg-myPurple {
+    background-color: #39023A;
+    padding: 20px;
+}
+
+.myWhite {
+    color: #a595a5;
+    font-weight: 500;
+}
+.myWhite:hover {
+    color: #ffffff;
+    font-weight: 500;
+}

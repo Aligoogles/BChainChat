@@ -1,11 +1,18 @@
-<div class="container">
-  <h1>Editing post</h1>
+<div class="container rounded bg-white mt-5 mb-5 main-container">
 
-  <%= render "form", post: @post %>
+  <div class="row">
+    <div class="col-md-8 border-right">
+      <div class="row mt-2">
+        <h3>Edit Post</h3>
+        <div class="col-md-10 form-control", style=" margin: 2% 2% 10% 1.5%;">
 
-  <br>
+          <%= render "form", post: @post %>
 
-  <div>
-    <%= link_to "Back to posts", posts_path %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= link_to "Back to posts", posts_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 25px; text-decoration: none; border-radius: 8px;" %>
+    </div>
   </div>
 </div>

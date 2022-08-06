@@ -1,38 +1,50 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="container rounded bg-white  main-container">
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-md-5 border-right">
+      <div class="row ">
+        <div class="col-md-12 ">
+
+          <%= form_with(model: post) do |form| %>
+            <% if post.errors.any? %>
+              <div style="color: red">
+                <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+                <ul>
+                  <% post.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="row">
+
+              <div class="col-md-12", style="margin-top: 8%;">
+                <% if post.image?%>
+                  <img src= "<%= post.image %>" style="height: 200px; width: 230px; margin: 0;" >
+                <% end %>
+                <br />
+                <br />
+                <%= form.file_field :image %>
+              <div>
+
+              <div class="col-md-12", style="margin-top: 8%;">
+                <%= form.date_field :post_date, value:Date.today.to_s, style: "display: none" %>
+              </div>
+            
+              <div class="col-md-12 ", style="margin: 10% 0% 8% 0%; ">
+                <%= form.text_area :comment, class: "form-control" %>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 15%;">
+              <%= form.submit %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :post_date, style: "display: none" %>
-    <%= form.date_field :post_date, value:Date.today.to_s, style: "display: none" %>
   </div>
-
-  <div>
-    <%= form.label :comment, style: "display: none" %>
-    <%= form.text_area :comment %>
-  </div>
-
-  <br />
-  <div>
-    <%= form.label :image, style: "display: none" %>
-    <%= form.file_field :image %>
-    <% if post.image?%>
-      <img src= "<%= post.image %>" style="height: 200px; width: 230px; margin: 0;" >
-    <% end %>
-  </div>
-
-  <br />
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div> 
 

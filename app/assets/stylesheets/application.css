@@ -1,52 +1,164 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #39023A;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
 body {
-    overflow: hidden;
-  }
-  .msg-form {
-    width: 100%;
-    height: 56px;
-    padding: 10px;
-  }
-  
-  #single_room {
-    height: calc(100vh - 150px);
-  }
-  
-  #messages {
-    height: calc(100vh - 150px);
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-  
-  #dashboard_container {
-    height: 100vh;
-    margin-right: 0px !important;
-  }
-  
-  #side_panel {
-    height: 100vh;
-    margin-right: 0px !important;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin-bottom: 55px;
-  }
-  #chatroom_container {
-    height: 100vh;
-    margin-right: 0px !important;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  
-  .msg-content {
-    width: 80%;
-    margin-right: 5px;
-  }
-  .message-box {
-    word-wrap: break-word;
-    width: fit-content;
-    max-width: 40%;
-    padding: 5px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background-color: #555555;
-    padding: 10px;
-  }
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  color: #39023A;
+  font-weight: 600;
+}
+a {
+  font-family: 'Roboto', sans-serif;
+  color: #39023A;
+  font-weight: 400;
+}
+
+p{
+  color: #000000;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+button.btn {
+  background-color: #39023A;
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all .5s;
+}
+
+button.btn:hover {
+  background-color: #ffffff;
+  color: #39023A;
+  border: 3px solid #39023A;
+  transform: scale(1.0);
+}
+
+.main-container {
+  margin-top: 3%;
+}
+.spacing-top {
+  margin-top: 10%;
+}
+
+.orange-i-text {
+  font-style: italic;
+  color: rgb(240, 147, 8);
+}
+.red-i-text {
+  font-style: italic;
+  color: rgb(206, 4, 4);
+  font-weight: 600;
+}
+
+/* Landing-page */
+.main-page-title {
+  font-weight: 700;
+}
+.about-us {
+  font-size: 18px;
+  color: #39023A;
+  font-weight: 500;
+}
+
+/* Sign up page */
+.sign-up-text {
+  text-align: center;
+}
+form#new_user.new_user {
+  width: 60%;
+  margin-left: 20%;
+}
+.field {
+  margin-top: 2%;
+}
+
+/* Sign-in Page */
+.sign-in h2 {
+  text-align: center;
+  font-weight: 400;
+}
+.sign-in-sub-title {
+  width: 30%;
+  margin: 3% 35% 6% 35%;
+}
+
+
+/* Messages DashBoard */
+.msg-form {
+  width: 100%;
+  height: 56px;
+  padding: 10px;
+}
+
+#single_room {
+  height: calc(100vh - 150px);
+}
+
+#messages {
+  height: calc(100vh - 150px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#dashboard_container {
+  height: 100vh;
+  margin-right: 0px !important;
+}
+
+#side_panel {
+  height: 100vh;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 55px;
+}
+#chatroom_container {
+  height: 100vh;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.msg-content {
+  width: 80%;
+  margin-right: 5px;
+}
+.message-box {
+  word-wrap: break-word;
+  width: fit-content;
+  max-width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #555555;
+  padding: 10px;
+}

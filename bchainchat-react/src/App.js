@@ -2,7 +2,6 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LandingPage from './pages/home/LandingPage';
 import NavBar from './components/nav_bar/NavBar';
 import News from './pages/news/News';
 
@@ -13,12 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
-
-        <LandingPage />
-        <br />
         <br />
         <News />
-
       </Router> 
     </div>
   );
