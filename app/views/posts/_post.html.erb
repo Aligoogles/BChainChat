@@ -5,7 +5,7 @@
     <div class="user-id col">
       <p>
         <strong>Posted by:</strong>
-        <%= link_to post.user.first_name, user_profile_path(post.user) %>
+        <%= link_to post.user.first_name, user_profile_path(current_user.id)%>
       </p>
     </div>
 

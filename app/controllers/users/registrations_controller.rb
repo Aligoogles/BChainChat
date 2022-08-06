@@ -40,6 +40,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
+  def after_sign_up_path_for(user)
+    user_profile_path(current_user.id)
+  end
+
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:image, :first_name, :last_name, :screen_name, :age, :phone_number, :bio,  :country, :profession, :interest, :email, :password, :remember_me])
