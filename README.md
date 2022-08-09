@@ -1,24 +1,17 @@
-# README
+# BChainChat app
+Tis is a Blockchain focused social networking platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things you may want to Check:
 
-Things you may want to cover:
+* Ruby version 3.0
 
-* Ruby version
+* Rails version 7.0.3
 
-* System dependencies
+* Configuration run rails db:migrate after cloning the repo and then run rails db:seed to install default users and posts
 
-* Configuration
+* Database sqlite3 
 
-* Database creation
+* Deployment instructions sqlite 3 gem goes under development and postgresql gem under production as its hosted on Heroku
 
-* Database initialization
+This app is using bootstrap for styling. Application.css file not recognised due to installation of  --css:bootstrap 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

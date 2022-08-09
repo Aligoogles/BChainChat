@@ -217,6 +217,7 @@ GEM
     nokogiri (1.13.6-x64-mingw32)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.3-x64-mingw32)
     popper_js (2.11.5)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -358,6 +359,7 @@ DEPENDENCIES
   ipinfo-rails
   jbuilder
   mini_magick
+  pg
   puma (~> 5.0)
   rack-cors (~> 1.1)
   rails (~> 7.0.3)

@@ -51,6 +51,8 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  gem "rspec", "~> 3.11"
 end
 
 group :development do
@@ -67,6 +69,10 @@ group :development do
   # gem "spring"
 end
 
+group :production do
+gem 'pg'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
@@ -79,8 +85,6 @@ gem "devise", "~> 4.8"
 gem "doorkeeper", "~> 5.5"
 
 gem "rack-cors", "~> 1.1"
-
-gem "rspec", "~> 3.11"
 
 gem "simple_form"
 
