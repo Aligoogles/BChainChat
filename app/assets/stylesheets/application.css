@@ -1,5 +1,4 @@
-
-
+/* 
 *{
   margin: 0;
   padding: 0;
@@ -77,9 +76,9 @@ button.btn:hover {
   font-style: italic;
   color: rgb(206, 4, 4);
   font-weight: 600;
-}
+} */
 
-/* Landing-page */
+/* Landing-page 
 .main-page-title {
   font-weight: 700;
 }
@@ -87,9 +86,9 @@ button.btn:hover {
   font-size: 18px;
   color: #39023A;
   font-weight: 500;
-}
+}*/
 
-/* Sign up page */
+/* Sign up page 
 .sign-up-text {
   text-align: center;
 }
@@ -99,9 +98,9 @@ form#new_user.new_user {
 }
 .field {
   margin-top: 2%;
-}
+}*/
 
-/* Sign-in Page */
+/* Sign-in Page 
 .sign-in h2 {
   text-align: center;
   font-weight: 400;
@@ -109,17 +108,17 @@ form#new_user.new_user {
 .sign-in-sub-title {
   width: 30%;
   margin: 3% 35% 6% 35%;
-}
+}*/
 
 
-/* Messages DashBoard */
+/* Messages DashBoard 
 .msg-form {
   width: 100%;
   height: 56px;
   padding: 10px;
 }
 
-#single_room {
+#single_dashboard {
   height: calc(100vh - 150px);
 }
 
@@ -159,6 +158,6 @@ form#new_user.new_user {
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555555;
+  background-color: #39023A;
   padding: 10px;
-}
+}*/

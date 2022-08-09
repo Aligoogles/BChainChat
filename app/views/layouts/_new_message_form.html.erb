@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="form-group msg-form">
+    <div class="form-dashboard msg-form" style=" width: 100%; height: 56px; padding: 10px;">
         <%= form_with(model: [@single_dashboard, @message], remote: true, class:'d-flex', data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset"}) do |f| %>
-            <%= f.text_field :body, id: 'chat-text', class: 'form-control msg-content', autocomplete: 'off' %>
-            <%= f.submit data: {disable_with: false}, class: 'btn btn-primary' %>
+            <%= f.text_field :body, id: 'chat-text', class: 'form-control msg-content', autocomplete: 'off', style: "  width: 80%; margin-right: 5px;" %>
+            <%= f.submit data: {disable_with: false}, class: 'btn', style: "background-color: #39023A; color: #ffffff; margin-left: 3%; padding: 10px 30px; text-decoration: none;" %>
         <% end %>
     </div>
 </div>

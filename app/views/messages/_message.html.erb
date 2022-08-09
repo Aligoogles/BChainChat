@@ -1,8 +1,8 @@
 <div class="container">
     <div class="cont-<%=message.user.id%>">
-        <div class="message-box msg-<%= message.user.id %>">
+        <div class="message-box msg-<%= message.user.id %>" style="  word-wrap: break-word; width: fit-content; max-width: 40%; padding: 5px; border-radius: 10px; margin-bottom: 10px; background-color: #39023A; color: #ffffff; padding: 10px;">
             <% unless message.dashboard.is_private %>
-            <h6 class="name"> <%= message.user.email %> </h6>
+            <h6 class="name"> <%= message.user.screen_name %> </h6>
             <% end %>
             <%= message.body %>
         </div>
