@@ -1,13 +1,13 @@
 <div class="main-container sign-up-text">
   <h2 class="sign-in", style="  text-align: center;
-  font-weight: 400;">BChainChat</h2>
+  font-weight: 400; margin-top: 3%;">BChainChat</h2>
   <h5 class="sign-in-sub-title", style="  width: 30%;
-  margin: 3% 35% 6% 35%;">Login and  start exploring the amazing world of Blockchain!</h5>
+  text-align: center; margin: 3rem 28rem;">Login and  start exploring the amazing world of Blockchain!</h5>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="form-control", style="width: 60%; margin-left: 20%;">
+    <div style="width: 60%; max-width: 98rem; padding: 2rem 5rem; background-color: #F2F2F2; box-shadow: 0 0 8px 3px rgba(0,0,0,.3); border-radius: .8rem; margin-left: 15rem;">
 
       <div class="field", style="width: 68%; margin-left: 15%; margin-top: 10%;">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control py-2" %>
