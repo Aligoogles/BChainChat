@@ -1,40 +1,47 @@
 
-<div id="<%= dom_id post %>">
-
-  <div class="row">
-    <div class="user-id col">
-      <p>
-        <strong>Posted by:</strong>
-        <%= link_to post.user.screen_name, user_profile_path(current_user.id)%>
-      </p>
+<div id="<%= dom_id post %>" class="container">
+  <div class="blog-post" style="width: 101%; max-width: 98rem; padding: 2rem 5rem; background-color: #F2F2F2; box-shadow: 0 0 8px 3px rgba(0,0,0,.3); display: flex; align-items: center; border-radius: .8rem; margin: 3% 0%;">
+    <div class="display-img">
+      <% if post.image?%>
+        <div >
+          <img src= "<%= post.image  %>" style="height: 13rem; max-width: 15rem; min-width: 15rem; padding: 3%; transform: translateX(-2rem); border-radius: 0.5rem; box-shadow: 0 0 8px 3px rgba(0,0,0,.3);" >
+        </div>
+      <% end %>
     </div>
 
-    <div class="post-date col">
-      <p>
-        <strong>Post date:</strong>
-        <%= post.post_date %>
-      </p>
-    </div>
-  </div>  
 
-  <div class="comment">
-    <p>
-      <strong>Comment:</strong>
-      <%= post.comment %>
-    </p>
+    <div class="display-info">
+      <div style="margin: 3%; text-decoration: none;">
+        <strong style="margin-right: 1rem;">Posted by:</strong>
+        <%= link_to post.user.screen_name, user_profile_path(current_user.id), style: "text-decoration: none; color: #ffffff; background-color: #39023A; padding: 1% 7%; border-radius: 5px;"%>
+      </div>
+
+      <div class="post-date" style="margin: 3%;">
+        <p>
+          <strong style="margin-right: 1rem;">Post date:</strong>
+          <%= post.post_date %>
+        </p>
+      </div>
+
+      <div class="post-desc " style="margin: 3%;">
+        <div class="comment">
+          <p>
+            <strong style="margin-right: 1rem;">Comment:</strong>
+            <%= post.comment %>
+          </p>
+        </div>
+      </div>
+
+      <br />
+      <div style="margin-left: 2rem;">  
+        <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
+        <br>
+        Likes: <%= post.cached_votes_total%>
+        <br/>
+        <div style="margin-top: 1rem;">
+          <strong ><%= link_to post.replies.count, post, method: :post, style: "text-decoration: none; color: #39023A;" %> Replies</strong>
+        </div>
+      </div>
+    </div> 
   </div>
-
-
-  <% if post.image?%>
-    <div >
-      <img src= "<%= post.image  %>" style="height: 200px; width: 230px; margin: 0;" >
-    </div>
-  <% end %>
-  <br />
-  
-  <%= button_to upvote_label(post, current_user), vote_post_path(post, type: :upvote), method: :patch, style: upvote_label_styles(post, current_user) %>
-  <br>
-  Likes: <%= post.cached_votes_total %>
-  <hr />
-
 </div>

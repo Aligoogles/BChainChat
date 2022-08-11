@@ -13,7 +13,7 @@ module PostsHelper
       
     def upvote_label_styles(post, user)
         if user.voted_up_on? post
-          "background-color: purple;"
+          "background-color: purple; color: #ffffff;  border-radius: 5px;"
         end
     end
     

@@ -2,12 +2,12 @@
 <br />
 <%= simple_form_for([@post, @post.replies.build]) do |f| %>
     <div class="field">
-        <div class="control">
-            <strong> <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label', style: "display: none" } %></strong>
+        <div class="control" style="box-shadow: 0 0 8px 3px rgba(0,0,0,.3); border-radius: .8rem;">
+            <strong> <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label', style: "display: none" }%></strong>
         </div>
     </div>
     <br />
-    <%= f.button :submit, 'Save', style: "background-color: #39023A; color: #ffffff;"%>
+    <%= f.button :submit, 'Save', style: "background-color: #39023A; color: #ffffff; border-radius: 5px; padding: 3px 25px;  "%>
 <% end %> 
 
 

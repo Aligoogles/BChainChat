@@ -1,36 +1,37 @@
 <div class="container rounded bg-white mt-5 mb-5 main-container">
-  <h1>Posts</h1>
 
-  <div id="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
+  <div class="row">
+    <div id="posts" >
 
-      <strong><%= post.replies.count %> Replies</strong>
-      <p>
-        <div class="row">
-          <div class="col">
-            <%= link_to "Show this post", post, method: :post, style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %>
-          </div>
-
-          <% if current_user && current_user == post.user %>
-            <div class="col">
-              <%= link_to "Edit Post", edit_post_path(post), style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;" %> 
-            </div>
-            
-            <div class="col">
-              <%= button_to "Delete", post, method: :delete, style: "background-color: #39023A; color: #ffffff;" %>
-            </div>
-          <% end %>
+      <div class="row">
+        <div class="col">
+          <%= link_to "+ Create post", new_post_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; border-radius: 5px;" %>
         </div>
-        <hr />
-      </p>
-    <% end %>
-    <br />
-
-    <div class="row">
-      <div class="col">
-        <%= link_to "New post", new_post_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none;" %>
       </div>
+
+      <% @posts.each do |post| %>
+        <%= render post %>
+        <p>
+          <div class="row">
+            <div class="col">
+              <%= link_to "Show this post", post, method: :post, style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none;  border-radius: 5px; margin-left: 1rem;" %>
+            </div>
+
+            <% if current_user && current_user == post.user %>
+              <div class="col">
+                <%= link_to "Edit Post", edit_post_path(post), style: "background-color: #39023A; color: #ffffff; padding: 8px; text-decoration: none; border-radius: 5px;" %> 
+              </div>
+              
+              <div class="col">
+                <%= button_to "Delete", post, method: :delete, style: "background-color: #39023A; color: #ffffff; border-radius: 5px; padding: 1% 3%; margin-top: -2%;" %>
+              </div>
+            <% end %>
+          </div>
+          <br />
+          <hr />
+        </p>
+      <% end %>
+      <br />
     </div>
   </div>
   <br />

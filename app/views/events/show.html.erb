@@ -4,17 +4,19 @@
 
   <div class="row"> 
     <div class="col">
+
+      <div>
+        <%= link_to "Back", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;  border-radius: 5px; margin: 0rem .5rem 0rem 1rem; float: right;" %>
+      </div>
+
       <% if current_user && current_user == @event.user %>
         <div>
-          <%= link_to "Edit", edit_event_path(@event), style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %> 
+          <%= button_to "Delete", @event, method: :delete, style: "background-color: #39023A; color: #ffffff; padding: 6px 26px; text-decoration: none; float: right;  border-radius: 5px; " %>
 
-          <%= button_to "Delete", @event, method: :delete, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;" %>
+          <%= link_to "Edit", edit_event_path(@event), style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;  border-radius: 5px; float: right; margin: 0rem 1.1rem 0rem 0rem;" %> 
+
         </div>
       <% end %>
-
-      <div style="margin-top: 5%;">
-        <%= link_to "Back", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; " %>
-      </div>
 
     </div>
   </div>

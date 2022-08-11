@@ -19,7 +19,7 @@
     <br />
     <br />
     <% if current_user && current_user == reply.user %>
-      <%= button_to 'Delete', [reply.post, reply], method: :delete, class: "button is-danger", data: { confirm: 'Last chance to go back before fully deleted ?' } %>
+      <%= button_to 'Delete', [reply.post, reply], method: :delete, class: "button is-danger", data: { confirm: 'Last chance to go back before fully deleted ?'}, style: "background-color: #39023A; color: #ffffff; padding: 3px 25px; text-decoration: none; border-radius: 5px;" %>
     <% end %>
   </article>
   <hr />

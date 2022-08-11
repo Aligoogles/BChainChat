@@ -11,10 +11,10 @@
         <div class="row">
             <div class="col">
                 <% if current_user.admin? %>
-                    <h3>Currently there are <%= User.count %> registered users on BChainChat!</h3>
+                    <h4 style="margin-top: 5%;">Currently there are <%= User.count %> registered users on BChainChat!</h4>
                     <br />
                     <br />
-                    <%= link_to 'Review Event Submissions' %>
+                    <%= link_to 'Review Event Submissions', events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right;  border-radius: 5px;" %>
                 <% end %>
             </div>
         </div>
@@ -31,26 +31,27 @@
             </div>
 
             <div class="col-2">
-                <%= link_to "Messages", dashboards_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right; margin-top: 10%;" %>
+                <%= link_to "Messages", dashboards_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none; float: right; margin-top: 10%;  border-radius: 5px;" %>
             </div>
 
             <div class="col-4">
-                <%= link_to 'Attending Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 10%;" %>
+                <%= link_to 'Attending Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 10%;  border-radius: 5px;" %>
             </div>
             <div class="col">
-                <%= link_to 'Hosting Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: -5%;" %>
+                <%= link_to 'Hosting Events', events_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: -5%;  border-radius: 5px;" %>
             </div>
         </div>
         <br />
         <br />
         <div class="row">
             <div class="col-8">
-                <%= link_to 'Update Details', edit_user_registration_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none;" %>
+                <%= link_to 'Update Details', edit_user_registration_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none;  border-radius: 5px;" %>
             </div>
 
             <div class="col ">
-                <%= link_to '+Create Post', new_post_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 20%;" %>
+                <%= link_to '+Create Post', new_post_path, style: "background-color: #39023A; color: #ffffff; padding: 10px 30px; text-decoration: none; float: right; margin-top: 20%;  border-radius: 5px;" %>
             </div>
+
         </div>
         <br />
     <% end %>

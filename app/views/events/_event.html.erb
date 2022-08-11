@@ -1,54 +1,56 @@
-<div class="container p-2 bg-light border" id="<%= dom_id event %>">
+<div class="container" id="<%= dom_id event %>">
+  <div style="width: 100%; max-width: 98rem; padding: 2rem 5rem; background-color: #F2F2F2; box-shadow: 0 0 8px 3px rgba(0,0,0,.3); display: flex; align-items: center; border-radius: .8rem; margin: 3% 0%;">
 
-  <% if event.image?%>
-    <div >
-      <img src= "<%= event.image  %>" style="height: 19vh; width: 24vh; margin: 2% 0%;" >
+    <div class="display-img">
+      <% if event.image?%>
+        <div >
+          <img src= "<%= event.image  %>" style="height: 13rem; max-width: 15rem; min-width: 15rem; padding: 3%; transform: translateX(-2rem); border-radius: 0.5rem; box-shadow: 0 0 8px 3px rgba(0,0,0,.3);" >
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-  <p>
-    <strong>Title:</strong>
-    <%= event.title %>
-  </p>
+    <div class="row">
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Title:</strong>
+        <%= event.title %>
+      </div>
 
-  <p>
-    <strong>Date:</strong>
-    <%= event.date %>
-  </p>
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Posted by:</strong>
+        <%= event.user.first_name %>
+      </div>
 
-  <p>
-    <strong>Time:</strong>
-    <%= event.time %>
-  </p>
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Date:</strong>
+        <%= event.date %>
+      </div>
 
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Time:</strong>
+        <%= event.time %>
+      </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Location:</strong>
+        <%= event.location %>
+      </div>
 
-  <p>
-    <strong>Limit:</strong>
-    <%= event.limit %>
-  </p>
+      <div class="col-6" style="margin-bottom: 1rem;">
+        <strong>Limit:</strong>
+        <%= event.limit %>
+      </div>
 
-  <p>
-    <strong>Attendees:</strong>
-    <%= event.attendees %>
-  </p>
+      <div class="col-12" style="margin-bottom: 1rem;">
+        <strong>Description:</strong>
+        <%= event.description %>
+      </div>
 
-  <p>
-    <strong>Posted by:</strong>
-    <%= event.user.first_name %>
-  </p>
 
-  <%= button_to uprsvp_label(event, current_user), rsvp_event_path(event, type: :uprsvp), method: :patch, style: uprsvp_label_styles(event, current_user) %>
-  <br>
-  <strong>Attendees: <%= event.cached_votes_total %> </strong>
-  
-  <hr />
+      <%= button_to uprsvp_label(event, current_user), rsvp_event_path(event, type: :uprsvp), method: :patch, style: uprsvp_label_styles(event, current_user) %>
+      <br />
+      <br />
+      <strong>Attendees: <%= event.cached_votes_total %> </strong>
+      
+    </div>
+  </div>
 </div>

@@ -13,7 +13,7 @@ module EventsHelper
       
     def uprsvp_label_styles(event, user)
         if user.voted_up_on? event
-          "background-color: purple;"
+          "background-color: purple; color: #ffffff; border-radius: 5px;"
         end
     end
 end

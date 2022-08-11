@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   #User Profile page
   get '/profile/:id', to:'user_profiles#profile', as: 'user_profile'
 
-  #News (API)
-  get 'news', to: 'pages#news'
-
   #Landing Page
   root 'pages#home'
 
@@ -44,6 +41,6 @@ Rails.application.routes.draw do
   end
 
   #allows to draw additional routes from new routes folder
-  draw :api
+  #draw :api
 
 end

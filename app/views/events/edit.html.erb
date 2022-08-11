@@ -1,14 +1,17 @@
 <div class="container">
-<div class="row">
+<div class="row" style="margin-top: 3%;">
     <h1>Editing event</h1>
 
     <%= render "form", event: @event %>
 
-    <br>
+    <div style="margin-top: -8rem;">
 
-    <div>
-      <%= link_to "More", @event, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %> |
-      <%= link_to "Back", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8px 30px; text-decoration: none;" %>
+      <%= link_to "Back to all posts", events_path, style: "background-color: #39023A; color: #ffffff; padding: 8.8px 30px; text-decoration: none; border-radius: 5px; margin: 5.4rem 12rem 0rem 3rem; float: right;" %>
+
+      <%= link_to "Back", @event, style: "background-color: #39023A; color: #ffffff; padding: 8.8px 30px; text-decoration: none; border-radius: 5px; margin: 5.4rem 0rem 0rem 0rem; float: right;" %> 
+      
     </div>
+    <br />
+    <br />
   </div>
 </div>
