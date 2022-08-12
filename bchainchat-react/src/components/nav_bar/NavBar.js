@@ -12,16 +12,16 @@ function NavBar() {
     <Container>
       <Navbar bg="myPurple" expand="lg" variant="myWhite">
         <Container fluid>
-          <Navbar.Brand href="https://b-chainchat.herokuapp.com/"><img className="logo-img" src={logo} alt="logo" /></Navbar.Brand>
+          <Navbar.Brand href="http://localhost:3000/"><img className="logo-img" src={logo} alt="logo" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
 
             <Nav className="me-auto my-2 my-lg-0 justify-content-end flex-grow-1 pe-3"  style={{ maxHeight: '100px' }} navbarScroll>
-              <Nav.Link className="myWhite" href="https://b-chainchat.herokuapp.com/profile">User Profile</Nav.Link>
-              <Nav.Link className="myWhite" href="https://b-chainchat.herokuapp.com/posts/">Timeline</Nav.Link>
-              <Nav.Link className="myWhite" href="https://b-chainchat.herokuapp.com/">News</Nav.Link>
-              <Nav.Link className="myWhite" href="https://b-chainchat.herokuapp.com/events">Events</Nav.Link>
-              <Nav.Link className="myWhite" href="https://b-chainchat.herokuapp.com/events">Sign Out</Nav.Link>
+              <Nav.Link className="myWhite" href="http://localhost:3000/profile">User Profile</Nav.Link>
+              <Nav.Link className="myWhite" href="http://localhost:3000/posts/">Timeline</Nav.Link>
+              <Nav.Link className="myWhite" href="http://localhost:3001/">News</Nav.Link>
+              <Nav.Link className="myWhite" href="http://localhost:3000/events">Events</Nav.Link>
+              <Nav.Link className="myWhite" href="http://localhost:3000/events">Sign Out</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
